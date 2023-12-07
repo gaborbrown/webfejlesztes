@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tennis</title>
+    <link rel="icon" href="../media/tennis_ball.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/players.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/classic/galleria.classic.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#images').galleria({
+        });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#myform").validate({
+            rules: {
+                firstname: "required",
+                lastname: "required",
+                email: {
+                required: true,
+                email: true
+                },
+                password: {
+                required: true,
+                minlength: 8
+                },
+                elfogad: {
+                required: true,
+                },
+                phone: {
+                required: true,
+                digits: true,
+                minlength: 10,
+                maxlength: 10
+                },
+                birthdate: {
+                    required: true,
+                    date: true
+                }
+            },
+            messages: {
+                firstname: " Write your first name here!",
+                lastname: " Write your last name here!",
+                password: {
+                required: " What's your password?",
+                minlength: " Your password needs to be atleast 8 characters long!"
+                },
+                email: " Write a legitemate email!",
+                elfogad: " Please accept our terms of service!",
+                phone: {
+                required: "Please enter your phone number",
+                digits: "Please enter only digits",
+                minlength: "Your phone number must be 10 digits",
+                maxlength: "Your phone number must be 10 digits"
+                },
+                birthdate: {
+                    required: "Please enter your birth date",
+                    date: "Please enter a valid date (mm/dd/yyyy)"
+                }
+            },
+        });
+        });
+</script>
+</head>
+
+<body>
+    <section class="hero">
+        <container class="container-top">
+            <div class="top">
+                <div class="nav">
+                    <img src="../media/tennis_ball.svg" alt="tennis ball" class="logo">
+                    <div class="nav-link-wrapper-wrapper">
+                        <div class="nav-link-wrapper">
+                            <a href="../html/index.html" class="nav-link">how to play</a>
+                        </div>
+                        <div class="nav-link-wrapper">
+                            <a href="../html/players.html" class="nav-link current">players</a>
+                        </div>
+                        <div class="nav-link-wrapper">
+                            <a href="../html/racquet.html" class="nav-link">rackets</a>
+                        </div>
+                        <div class="nav-link-wrapper">
+                            <a href="../html/wii.html" class="nav-link">wii sports</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-heading-wrapper">
+                    <h1 class="hero-heading">players</h1>
+                </div>
+                <div class="hero-subheading"></div>
+            </div>
+        </container>
+    </section>
+    <section class="images-section">
+        <container class="container-middle">
+            <div class="middle">
+                <div class="image-wrapper">
+                    <div id="images" class="galleria">
+                        <img src="../media/novak-djokovic.jpeg" alt="Novak Djokovic celebrating on the court." title="Novak Djokovic">
+                        <img src="../media/serena_williams.jpeg" alt="Serena Williams on the cover of Time Magazine" title="Serena Williams">
+                        <img src="../media/Carlos_Alcaraz.jpeg" alt="Carlos Alcaraz" title="Carlos Alcaraz">
+                    </div>
+                </div>
+            </div>
+        </container>
+    </section>
+    <section class="newsletter-section">
+        <container class="container-bottom">
+            <div class="bottom">
+                <div class="form-wrapper-wrapper">
+                    <div class="h2-wrapper">
+                        <h2>Subscribe to our newsletter to be notified about the latest news regarding top players:</h2>
+                    </div>
+                    <div class="form-wrapper">
+                        <form action="http://szamtud.uni-corvinus.hu/receive.php" method="post" id="myform" novalidate>
+                            <p><label for="firstname">First name: <br> </label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Jakab"></p>
+                            <p><label for="lastname">Last name: <br> </label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Gipsz"></p>
+                            <p><label for="email">Email: <br> </label>
+                            <input type="text" name="email" id="email"></p>
+                            <p><label for="password">Password: <br> </label>
+                            <input type="password" name="password" id="password"></p>
+                            <p><input type="text" name="phone" id="phone" placeholder="Your Phone Number"></p>
+                            <p><input type="text" name="birthdate" id="birthdate" placeholder="Your Birthdate (mm/dd/yyyy)"></p>
+                            <p><label for="elfogad">I accept the terms of service<br> </label>
+                            <input type="checkbox" name="elfogad" id="elfogad"></p>
+                            <p><input type="submit" value="Submit"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </container>
+    </section>
+</body>
+</html>
+
+
